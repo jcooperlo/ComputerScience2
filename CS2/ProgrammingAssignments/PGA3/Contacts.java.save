@@ -1,0 +1,103 @@
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+
+public class Contacts
+{
+	public static char getMenuChoice()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("U  Upflip");
+		System.out.println("D  Downflip");
+		System.out.println("A  Add New Contact");
+		System.out.println("R  Remove Existing Contact");
+		System.out.println("Q  Quit");
+
+		System.out.print("Enter your choice: ");
+		char choice = s.next().charAt(0);
+		return choice;
+	}//getMenuChoice
+
+	public static void fillList()
+	{
+		DoubleLinkedList<String> DLL = new DoubleLinkedList<String>();
+
+                try
+                {
+                        File inputFile = new File("test.txt");
+                        Scanner fileScanner = new Scanner(inputFile);
+
+                        while(fileScanner.hasNext())
+                        {
+                                String name = fileScanner.nextLine();
+
+                                DLL.addTail(name);
+                        }//while
+                }//try
+
+                catch(IOException e)
+                {
+                        System.out.println(e.getStackTrace());
+                }//catch
+	}//fillList
+		
+	public static void main(String [] args)
+	{	
+		fillList();
+		DoubleLinkedList<String> DLL = new DoubleLinkedList<String>();
+		char choice = getMenuChoice();	
+		Iterator list = DLL.iterator();		
+
+		while(choice != 'Q')
+		{			
+			if(choice != 'U' && choice != 'D' && choice != 'A' && choice != 'R' && choice != 'Q')
+			{
+				System.out.println("Entry Invalid. Please try again. ");
+				choice = getMenuChoice();
+			}
+			
+			else if(choice == 'U')
+			{
+				while(list.hasNext())
+				{
+					System.out.println(list.next());
+				}
+				choice = getMenuChoice();
+			}
+
+			else if(choice == 'D')
+			{
+				while(!DLL.isEmpty())
+				{
+					System.out.println("D");
+					System.out.println(DLL.removeLast());
+				}
+				choice = getMenuChoice();
+			}
+
+			else if(choice == 'A')
+			{
+				Scanner a = new Scanner(System.in);
+				System.out.print("What would you like to add? ");
+				String add = a.next();
+				System.out.println(add);
+			
+				choice = getMenuChoice();
+			}
+		
+			else if(choice == 'R')
+			{
+				Scanner r = new Scanner(System.in);
+				System.out.println("Who would you like to remove? ");
+				String remove = r.next();
+				System.out.println(remove);
+				//DLL.remove(remove);
+				//show the contacts
+				choice = getMenuChoice();
+			}
+		}
+
+		System.out.println("Thank you and Goodbye.");
+	}
+}
+
