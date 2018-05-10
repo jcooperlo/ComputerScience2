@@ -1,20 +1,3 @@
-java SolveTowers
-nano TowersOfHanoi.java
-javac *.java
-java SolveTowers
-nano TowersOfHanoi.java
-javac *.java
-nano TowersOfHanoi.java
-javac *.java
-java SolveTowers
-nano TowersOfHanoi.java
-javac *.java
-java SolveTowers
-nano TowersOfHanoi.java
-javac *.java
-nano TowersOfHanoi.java
-javac *.java
-java SolveTowers
 nano SolveTowers.java
 nano TowersOfHanoi.java
 javac *.java
@@ -998,3 +981,20 @@ cd PGA3
 ls
 nano List.java
 nano Contacts.java
+git int
+git init
+git add .
+git commit -m "Adding files"
+git remote add origin
+git push origin master
+git status
+git remote add origin https://github.com/jcooperlo/ComputerScience2.git
+git push origin master
+exit
+ls
+cd CS2
+ls
+cd lab5
+ls
+nano ListDriver.java
+nano LinkedList.java
