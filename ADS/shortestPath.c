@@ -1,8 +1,13 @@
+//Author: Cooper Locke
+//Task: This is a program that takes Dijkstra's Algorithm and implements
+//it to find the shortest path between two point.
+
 #include <stdio.h>
+#include <limit.h>
 
 void main(void)
 {
-	int MAX_INT = 100;             //creates the max integer for the chart    ASK CAIN
+	int MAX_INT = INT_MAX;         //creates the max integer for the chart
 	int listInt = 0;               //int used to iterate through the list
 	int chartInt = 0;              //int used to find the position on the three column chart
 	int rows = 0;                  //int used to iterate through the rows of the adjMatrix
